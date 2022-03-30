@@ -4,11 +4,16 @@ def numOfComparisons(root_node, searched_word, words):
 
     One level of the tree equals one comparison.
 
-    If word isnt present in the tree, prints out message
+    Returns number of comparisons on success, -1 if word not in the list
     """
 
     count = 0
-    searched_value = words.index(searched_word)
+
+    try:
+        searched_value = words.index(searched_word)
+    except:
+        return -1
+
     actual_node = root_node
 
     while True:

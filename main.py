@@ -25,8 +25,13 @@ def main():
         if word == '':
             break
 
-        print(
-            f'Number of comparison for word "{word}": {numOfComparisons(root_node, word, words)}\n')
+        comparisons = numOfComparisons(root_node, word, words)
+
+        if comparisons == -1:
+            print(f'Word {word} not found in the tree\n')
+        else:
+            print(
+                f'Number of comparison for word "{word}": {comparisons}\n')
 
 
 if __name__ == '__main__':
